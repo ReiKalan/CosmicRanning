@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OR : MonoBehaviour
+public class GoTitle : MonoBehaviour
 {
 
     // Update is called once per frame

@@ -19,7 +19,7 @@ public class CountDown : MonoBehaviour
     void Update()
     {
         
-        if (Finishdirector.activate == true)
+        if (FinishDirector._activate == true)
         {
             GoOP = GoOP - Time.deltaTime;
         }
