@@ -6,34 +6,39 @@ using UnityEngine.UI;
 //ユニティでシーン関係の操作を行う時のスクリプト
 using UnityEngine.SceneManagement;
 
-
-public class ReturnTiemr : MonoBehaviour
+public class CountDown : MonoBehaviour
 {
-    public static float Rttime;
+    public static float GoOP;
     // Start is called before the first frame update
     void Start()
     {
-        Rttime = 10;
+        GoOP = 11;
     }
 
     // Update is called once per frame
     void Update()
     {
-     
-        if(Rttime > 1)
+        
+        if (Finishdirector.activate == true)
         {
-            Rttime = Rttime - Time.deltaTime;
+            GoOP = GoOP - Time.deltaTime;
         }
-        if (Rttime <= 1)
+        if (GoOP <= 1)
         {
             //OPを取得する
-            SceneManager.LoadScene("OP");
+            SceneManager.LoadScene("Title");
         }
         //小数点以下は切り捨て
-        int Rt = Mathf.FloorToInt(Rttime);
+        int CLRt = Mathf.FloorToInt(GoOP);
         //テキストのコンポーネントを取得し
-        Text aleltTimer = GetComponent<Text>();
+        Text COUNT = GetComponent<Text>();
         //テキストを書き換える
-        aleltTimer.text = "後"+ Rt+"秒でOPにもどります";
+        COUNT.text = "OPまで" + CLRt +"秒";
+        if ((Input.GetKeyDown(KeyCode.T)) && (Input.GetKeyDown(KeyCode.B)))
+        {
+            SceneManager.LoadScene("Title");
+
+        }
     }
+    
 }

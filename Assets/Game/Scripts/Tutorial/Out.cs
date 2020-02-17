@@ -22,9 +22,9 @@ public class Out : MonoBehaviour
         //③.ゲーム開始時には0
         point = 0;
         Lpoint = 200;
-        Bpoint = 500;
-       
+        Bpoint = 500;   
     }
+
     //④これからCollision（衝突）するよ「3パターン分岐」
     void OnCollisionEnter(Collision col)
     {

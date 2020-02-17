@@ -20,12 +20,12 @@ public class Timer : MonoBehaviour
     void Update()
     {
         //④.ゴールしていない（false）ならば
-        if (Goal.goal == false)
+        if (Goal.is_goal == false)
         {
             //⑤.経過時間を減少させ
             time = time - Time.deltaTime;
         }
-         if (Goal.goal == true)
+         if (Goal.is_goal == true)
         {
             //mainを取得する
             SceneManager.LoadScene("Main");
@@ -42,6 +42,6 @@ public class Timer : MonoBehaviour
         //⑧.テキストを書き換える
         TimerText.text = "残り時間" + t;
 
-        RTtriger.RTTRIGER = false;
+        PositionInitialize.is_player_contact = false;
     }
 }

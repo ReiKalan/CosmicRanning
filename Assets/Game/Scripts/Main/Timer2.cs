@@ -19,33 +19,31 @@ public class Timer2 : MonoBehaviour
     }
     public void LateUpdate()
     {
-        if (RTtriger.RTTRIGER == true)
+        if (PositionInitialize.is_player_contact == true)
         {
            timetwo = timetwo + Penalty;
             //Debug.Log(timetwo);
-           
-           
-
         }
     }
     void Update()
     {
-
         //④.ゴールしていない（false）ならば
-        if (Goal.goal == false)
+        if (Goal.is_goal == false)
         {
             //⑤.経過時間を減少させ
             timetwo = timetwo - Time.deltaTime;
         }
-        if (Goal.goal == true)
+
+        if (Goal.is_goal == true)
         {
 
-            SceneManager.LoadScene("GAMECLEAR");
+            SceneManager.LoadScene("GameCrear");
         }
+        
         if (timetwo <= 1)
         {
             //GAMEOVERを取得する
-            SceneManager.LoadScene("GAMEOVERA");
+            SceneManager.LoadScene("GameOver");
         }
 
         //⑥.小数点以下は切り捨て
@@ -55,7 +53,7 @@ public class Timer2 : MonoBehaviour
         //⑧.テキストを書き換える
         TimerText.text = "残り時間" + t;
 
-        RTtriger.RTTRIGER = false;
+        PositionInitialize.is_player_contact = false;
     }
     
 }

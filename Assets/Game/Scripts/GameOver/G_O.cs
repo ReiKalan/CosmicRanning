@@ -11,7 +11,7 @@ public class G_O : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.T)) && (Input.GetKeyDown(KeyCode.B)))
         {
-            SceneManager.LoadScene("OP");
+            SceneManager.LoadScene("Title");
 
         }
     }

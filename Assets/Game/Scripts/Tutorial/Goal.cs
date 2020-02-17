@@ -5,11 +5,16 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     //変数の宣言
-    public static bool goal; //1.goal変数がtrueの時にゴールになる
+    public static bool _is_goal; //1.is_goal変数がtrueの時にゴールになる
+    
+    public static bool is_goal
+    {
+        get { return _is_goal; }
+    }
 
     void Start()
     {
-        goal = false; //2.最初にgoal変数はfalseと定義する
+        _is_goal = false; //2.最初にis_goal変数はfalseと定義する
     }
 
     //3.その状態で何らかのオブジェクトが（Goal)にぶつかって
@@ -20,8 +25,8 @@ public class Goal : MonoBehaviour
         {
             //EX.name取得出来ているかのテスト用
             //Debug.Log(collision.gameObject.name);
-            //5.goal変数はtrueになる
-            goal = true;
+            //5.is_goal変数はtrueになる
+            _is_goal = true;
         }
     }
 }

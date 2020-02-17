@@ -98,7 +98,7 @@ public class TutoButton : MonoBehaviour
     }
     public void MoveToTuSt()
     {
-        SceneManager.LoadScene("Tuto");
+        SceneManager.LoadScene("Tutorial");
     }
     
 

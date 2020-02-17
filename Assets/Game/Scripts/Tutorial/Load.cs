@@ -10,12 +10,12 @@ public class LOAD : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Vector3 num = GameObject.GetComponent<SAVE>().hitPos;
+            Vector3 num = GameObject.GetComponent<Save>().hitPos;
             this.transform.position = num;
         }
-        if (RTtriger.RTTRIGER ==true)
+        if (PositionInitialize.is_player_contact == true)
         {
-            Vector3 num = GameObject.GetComponent<SAVE>().hitPos;
+            Vector3 num = GameObject.GetComponent<Save>().hitPos;
             this.transform.position = num;
             //Debug.Log(num);
         }

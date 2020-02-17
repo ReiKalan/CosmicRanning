@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SAVE : MonoBehaviour
+public class Save : MonoBehaviour
 {
     public  Vector3 hitPos;
     // Update is called once per frame

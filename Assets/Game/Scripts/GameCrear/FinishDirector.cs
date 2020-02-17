@@ -5,9 +5,9 @@ using UnityEngine.UI;
 //ユニティでシーン関係の操作を行う時のスクリプト
 using UnityEngine.SceneManagement;
 
-public class Finishdirector : MonoBehaviour
+public class FinishDirector : MonoBehaviour
 {
-    public static bool ACTYVETE;
+    public static bool _activate;
     private int BestTIME;
     //ベストタイム格納用変数
     public Text FinishTIME;
@@ -23,7 +23,7 @@ public class Finishdirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ACTYVETE = false;
+        _activate = false;
         GOSUNKS();
 
         RESULTPanel.SetActive(true);
@@ -56,7 +56,7 @@ public class Finishdirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Goal.goal == true)
+        if (Goal.is_goal == true)
         {
             int Tscore = Mathf.FloorToInt(Timer2.timetwo);
             //Debug.Log(Tscore);
@@ -86,7 +86,7 @@ public class Finishdirector : MonoBehaviour
     }
     public void GOSUNKS()
     {
-        ACTYVETE = true;
+        _activate = true;
         RESULTPanel.SetActive(false);
         SUNKSPANEL.SetActive(true);
 

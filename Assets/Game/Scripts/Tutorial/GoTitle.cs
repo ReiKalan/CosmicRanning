@@ -12,7 +12,7 @@ public class OR : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T) && Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("XX");
-            SceneManager.LoadScene("OP");
+            SceneManager.LoadScene("Title");
         }
     }
 }
