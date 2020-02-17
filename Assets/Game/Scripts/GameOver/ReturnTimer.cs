@@ -17,31 +17,30 @@ public class ReturnTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 
-        if (_return_tiem <= 0)
+        // 0以下の場合初期化
+        if (_return_tiem < 0)
         {
             _return_tiem = 10;
         }
 
-        // _aleltimerに何も設定されてない場合
+        // _aleltimerに何も設定されてない場合取得
         if (_aleltimer == null)
         {
-            _aleltimer = GetComponent<Text>();
+            _aleltimer = GameObject.FindGameObjectWithTag("CountDown").GetComponent<Text>();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-     
-        if(_return_tiem > 1)
+        // カウントダウンが０以下の場合、またはT&Kを同時押ししたときにタイトルに戻る
+        if (_return_tiem <= 1 || ( Input.GetKeyDown(KeyCode.T) && Input.GetKeyDown(KeyCode.B) ) )
+        {
+            SceneManager.LoadScene("Title");
+        }
+        else
         {
             _return_tiem = _return_tiem - Time.deltaTime;
-        }
-        if (_return_tiem <= 1)
-        {
-            //OPを取得する
-            SceneManager.LoadScene("Title");
         }
         
         //小数点以下は切り捨て
