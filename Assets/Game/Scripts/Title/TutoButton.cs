@@ -56,11 +56,11 @@ public class TutoButton : MonoBehaviour
         Three = GameObject.Find("TitleWindow/TutoPanel2/MoveButtontu３").GetComponent<Button>();
         Three.Select();
     }
-    //public void BacktoMain()
-    //{
-        //TutoPanel1.SetActive(false);
-        //MainPanel.SetActive(true);
-    //}
+    public void BacktoMain()
+    {
+        TutoPanel1.SetActive(false);
+        MainPanel.SetActive(true);
+    }
     public void BackToTu1()
     {
         TutoPanel2.SetActive(false);
