@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMOP : MonoBehaviour
+public class GameBGM : MonoBehaviour
 {
-    public AudioClip BGMSound;
-    private AudioSource audioSource;
+    public AudioClip _bgm;
+    private AudioSource _audio;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
+        _audio = gameObject.GetComponent<AudioSource>();
     }
 }

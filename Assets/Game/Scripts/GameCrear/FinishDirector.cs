@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 public class FinishDirector : MonoBehaviour
 {
     public static bool _activate;
+    
+    public int _time = 0;
+    public int _point = 0;
     public int _best_time = 0;
     public int _best_point = 0;
 
@@ -37,6 +40,16 @@ public class FinishDirector : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("BestTime"))
         {
+            _time = PlayerPrefs.GetInt("Time");
+        }
+
+        if (PlayerPrefs.HasKey("BestPoint"))
+        {
+            _point = PlayerPrefs.GetInt("Point");
+        }
+
+        if (PlayerPrefs.HasKey("BestTime"))
+        {
             _best_time = PlayerPrefs.GetInt("BestTime");
         }
 
@@ -49,13 +62,7 @@ public class FinishDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Goal.is_goal == true)
-        {
-            int time = Mathf.FloorToInt(Timer2.timetwo);
-            int point = time * 100 + Mathf.FloorToInt(Point2.getPoint);
-
-            UpadteResult(time, point);
-        }
+        UpadteResult();
     }
 
     /// <summary>
@@ -73,25 +80,25 @@ public class FinishDirector : MonoBehaviour
     /// </summary>
     /// <param name="time">時間</param>
     /// <param name="point">ポイント</param>
-    private void UpadteResult(int time, int point)
+    private void UpadteResult()
     {
-        _time_text.text = "残り時間" + time + "秒";
-        _point_text.text = "獲得点数" + point + "ポイント";
+        _time_text.text = "残り時間" + _time + "秒";
+        _point_text.text = "獲得点数" + _point + "ポイント";
 
         // ベストタイム更新
-        if (_best_time < time)
+        if (_best_time < _time)
         {
             _best_time_obj.SetActive(true);
-            _best_time_text.text = "NICE!! ベストタイム" + point + "秒";
-            PlayerPrefs.SetInt("FinishBestPoint", point);
+            _best_time_text.text = "NICE!! ベストタイム" + _time + "秒";
+            PlayerPrefs.SetInt("FinishBestPoint", _time);
         }
             
         // ベストスコア更新
-        if (_best_point < point)
+        if (_best_point < _point)
         {
             _best_point_obj.SetActive(true);
-            _best_point_text.text = "NICE!! 最高点数" + point + "ポイント";
-            PlayerPrefs.SetInt("FinishBestPoint", point);
+            _best_point_text.text = "NICE!! 最高点数" + _point + "ポイント";
+            PlayerPrefs.SetInt("FinishBestPoint", _point);
         }
     }
 

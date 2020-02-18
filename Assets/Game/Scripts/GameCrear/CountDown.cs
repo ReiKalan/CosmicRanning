@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class CountDown : MonoBehaviour
 {
-    public static float GoOP;
+    public static float _count;
     // Start is called before the first frame update
     void Start()
     {
-        GoOP = 11;
+        _count = 11;
     }
 
     // Update is called once per frame
@@ -21,15 +21,15 @@ public class CountDown : MonoBehaviour
         
         if (FinishDirector._activate == true)
         {
-            GoOP = GoOP - Time.deltaTime;
+            _count = _count - Time.deltaTime;
         }
-        if (GoOP <= 1)
+        if (_count <= 1)
         {
             //OPを取得する
             SceneManager.LoadScene("Title");
         }
         //小数点以下は切り捨て
-        int CLRt = Mathf.FloorToInt(GoOP);
+        int CLRt = Mathf.FloorToInt(_count);
         //テキストのコンポーネントを取得し
         Text COUNT = GetComponent<Text>();
         //テキストを書き換える
