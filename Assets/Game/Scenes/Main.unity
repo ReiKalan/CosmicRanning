@@ -3432,6 +3432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e101593d3ad46419313b050b746b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _time: 110
+  _penalty: -10
 --- !u!114 &1705715175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,6 +3720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12efaebdf8192b49834a37d33d7b16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _point: 0
 --- !u!114 &1955516942
 MonoBehaviour:
   m_ObjectHideFlags: 0
