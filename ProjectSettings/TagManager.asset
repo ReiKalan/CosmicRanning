@@ -9,6 +9,11 @@ TagManager:
   - Buttons
   - Timemane
   - SAVEGET
+  - Fire
+  - CountDown
+  - New tag
+  - SmallBox
+  - LargeBox
   layers:
   - Default
   - TransparentFX
